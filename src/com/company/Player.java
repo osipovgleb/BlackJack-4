@@ -3,11 +3,11 @@ package com.company;
 /**
  * Created by falyanguzov on 09.11.2016.
  */
-public abstract class APlayer {
+public abstract class Player {
     Hand hand = new Hand();
     private Intellect intellect;
 
-    public APlayer(Intellect intellect) {
+    public Player(Intellect intellect) {
         this.intellect = intellect;
     }
 
@@ -16,6 +16,6 @@ public abstract class APlayer {
     }
 
     public Command decision() {
-        return intellect.decide();
+        return intellect.decide(hand.countScore());
     }
 }
