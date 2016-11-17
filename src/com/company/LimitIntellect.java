@@ -12,10 +12,9 @@ public class LimitIntellect extends Intellect {
 
     @Override
     public Command decide(int score) {
-        if(score<limit){
+        if(score<limit)
             return Command.HIT;
-        }else{
+       else
             return Command.STAND;
-        }
     }
 }

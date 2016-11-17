@@ -6,9 +6,12 @@ package com.company;
 public abstract class Player {
     Hand hand = new Hand();
     private Intellect intellect;
+    public String Name;
+    public PlayerState state;
 
-    public Player(Intellect intellect) {
+    public Player(Intellect intellect, String name) {
         this.intellect = intellect;
+        this.Name = name;
     }
 
     public void take(Card current) {
@@ -16,6 +19,6 @@ public abstract class Player {
     }
 
     public Command decision() {
-        return intellect.decide(hand.countScore());
+        return intellect.desideWithOverdraft(hand.countScore());
     }
 }

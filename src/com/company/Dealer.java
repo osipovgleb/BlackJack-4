@@ -9,9 +9,12 @@ public class Dealer extends Computer {
 
     public Dealer() {
         super(new DealerIntellect());
+        this.Name = "Dealer";
     }
 
     public void deal(Player player) {
+        if(deck.isEmpty())
+            deck = new Deck();
         Card current = this.deck.pop();
         player.take(current);
     }
